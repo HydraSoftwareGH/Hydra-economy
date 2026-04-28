@@ -38,7 +38,7 @@ El JAR estará en `build/libs/`.
 
 ## Compilación (GitHub Actions)
 - JDK 25 vía actions/setup-java
-- Bytecode Java 21 (`--release 21`)
+- Bytecode Java 21 (`-source 21 -target 21`)
 - paper-api 26.1.2.build.+
 
 ## Dependencias

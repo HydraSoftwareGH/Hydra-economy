@@ -15,7 +15,8 @@ dependencies {
 }
 
 tasks.withType<JavaCompile> {
-    options.release.set(21)
+    options.source = "21"
+    options.target = "21"
 }
 
 tasks {
