@@ -15,8 +15,7 @@ dependencies {
 }
 
 tasks.withType<JavaCompile> {
-    options.source = "21"
-    options.target = "21"
+    options.compilerArgs.addAll(listOf("-source", "21", "-target", "21"))
 }
 
 tasks {
