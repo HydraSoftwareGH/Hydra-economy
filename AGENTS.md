@@ -37,5 +37,5 @@ Plugin de economía para PaperMC 1.21.4 con moneda llamada "Hydras".
 El JAR estará en `build/libs/`.
 
 ## Dependencias
-- PaperMC 1.21.4 (API)
+- PaperMC 1.21.11 (API)
 - Java 21

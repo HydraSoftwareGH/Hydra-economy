@@ -11,11 +11,11 @@ Hydra economy
 
 # Reglas
 
-- Reglas no se modifica
-- tachar lo que ya hiciste
+- Reglas(esta parte) no se modifica
+- tachar lo que ya hiciste(menos reglas)
 - ~~se usa github accions para compilar~~
 - ~~esto es un pluig de papermc~~
-- ~~versión del minecraft 1.21.4 (Paper API)~~
-- hacer comit y push del git
+- ~~versión del minecraft 1.21.11 (Paper API)~~
+- ~~hacer comit y push del git~~
 - ~~hace un .MD de para los agentes de ia o para que los desaroyadores lo entiendan~~
 - ~~hacelo con java y gradle~~
