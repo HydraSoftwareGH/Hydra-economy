@@ -11,12 +11,7 @@ repositories {
 }
 
 dependencies {
-    compileOnly("io.papermc.paper:paper-api:1.21.4-R0.1-SNAPSHOT")
-}
-
-java {
-    sourceCompatibility = JavaVersion.VERSION_21
-    targetCompatibility = JavaVersion.VERSION_21
+    compileOnly("io.papermc.paper:paper-api:26.1.2.build.+")
 }
 
 tasks.withType<JavaCompile> {
