@@ -1,0 +1,35 @@
+name: HydraEconomy
+version: '${version}'
+main: com.hydrasoftware.hydraeconomy.HydraEconomy
+api-version: '1.21'
+author: HydraSoftware
+description: Sistema de economia con Hydras, recompensas diarias y mercado
+
+commands:
+  hydras:
+    description: Ver tu saldo de Hydras
+    aliases: [balance, money]
+    usage: /hydras [jugador]
+  pay:
+    description: Pagar Hydras a otro jugador
+    usage: /pay <jugador> <cantidad>
+  daily:
+    description: Reclamar tu recompensa diaria
+    usage: /daily
+  hydrasadmin:
+    description: Comandos de administrador para gestionar Hydras
+    aliases: [hadmin, ecoadmin]
+    usage: /hydrasadmin <give|remove|set|reload> <jugador> <cantidad>
+    permission: hydraeconomy.admin
+  mercado:
+    description: Sistema de mercado para comprar y vender items
+    aliases: [market, shop]
+    usage: /mercado <sell|buy|list|cancel> [args]
+
+permissions:
+  hydraeconomy.admin:
+    description: Permite usar comandos de administrador de economia
+    default: op
+  hydraeconomy.use:
+    description: Permite usar comandos basicos de economia
+    default: true
