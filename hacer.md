@@ -19,3 +19,5 @@ Hydra economy
 - hacer comit y push del git
 - hace un .MD de para los agentes de ia o para que los desaroyadores lo entiendan
 - hacelo con java y glade
+- cuando se haga una modificacion del codigo fuente, acutaliza AGENTS.md
+- cada promp ver reglas y cosas para agregar
