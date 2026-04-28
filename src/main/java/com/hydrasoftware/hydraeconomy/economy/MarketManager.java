@@ -41,11 +41,12 @@ public class MarketManager {
         ConfigurationSection listingsSection = data.getConfigurationSection("listings");
         if (listingsSection != null) {
             for (String key : listingsSection.getKeys(false)) {
-            int id = Integer.parseInt(key);
-            UUID seller = UUID.fromString(data.getString("listings." + key + ".seller"));
-            BigDecimal price = BigDecimal.valueOf(data.getDouble("listings." + key + ".price"));
-            ItemStack item = data.getItemStack("listings." + key + ".item");
-            listings.put(id, new MarketListing(id, seller, price, item));
+                int id = Integer.parseInt(key);
+                UUID seller = UUID.fromString(data.getString("listings." + key + ".seller"));
+                BigDecimal price = BigDecimal.valueOf(data.getDouble("listings." + key + ".price"));
+                ItemStack item = data.getItemStack("listings." + key + ".item");
+                listings.put(id, new MarketListing(id, seller, price, item));
+            }
         }
     }
 
