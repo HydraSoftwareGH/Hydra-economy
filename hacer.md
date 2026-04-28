@@ -15,7 +15,7 @@ Hydra economy
 - tachar lo que ya hiciste
 - ~~se usa github accions para compilar~~
 - ~~esto es un pluig de papermc~~
-- ~~versión del minecraft 1.21.4~~
+- ~~versión del minecraft 1.21.4 (Paper API)~~
 - hacer comit y push del git
 - ~~hace un .MD de para los agentes de ia o para que los desaroyadores lo entiendan~~
 - ~~hacelo con java y gradle~~

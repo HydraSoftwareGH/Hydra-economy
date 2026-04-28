@@ -96,7 +96,7 @@ public class DailyRewardManager {
     }
 
     public static class RewardData {
-        public final String lastClaim;
+        public String lastClaim;
         public int streak;
 
         public RewardData(String lastClaim, int streak) {
