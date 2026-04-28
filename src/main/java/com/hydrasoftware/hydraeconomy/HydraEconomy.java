@@ -16,6 +16,7 @@ public class HydraEconomy extends JavaPlugin {
 
     @Override
     public void onEnable() {
+        getDataFolder().mkdirs();
         saveDefaultConfig();
 
         economyManager = new EconomyManager(this);
@@ -33,8 +34,9 @@ public class HydraEconomy extends JavaPlugin {
 
     @Override
     public void onDisable() {
-        economyManager.save();
-        marketManager.save();
+        if (economyManager != null) economyManager.save();
+        if (dailyRewardManager != null) dailyRewardManager.save();
+        if (marketManager != null) marketManager.save();
         getLogger().info("HydraEconomy ha sido desactivado!");
     }
 

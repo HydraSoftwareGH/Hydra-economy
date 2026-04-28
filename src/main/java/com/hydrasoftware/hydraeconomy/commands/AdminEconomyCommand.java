@@ -114,5 +114,7 @@ public class AdminEconomyCommand implements CommandExecutor {
         sender.sendMessage(Component.text("/hydrasadmin remove <jugador> <cantidad> - Quitar Hydras").color(NamedTextColor.RED));
         sender.sendMessage(Component.text("/hydrasadmin set <jugador> <cantidad> - Establecer saldo").color(NamedTextColor.RED));
         sender.sendMessage(Component.text("/hydrasadmin reload - Recargar configuracion").color(NamedTextColor.RED));
+        sender.sendMessage(Component.text("").color(NamedTextColor.WHITE));
+        sender.sendMessage(Component.text("Documentacion completa: https://github.com/HydraSoftwareGH/Hydra-economy/blob/main/README.md").color(NamedTextColor.AQUA));
     }
 }

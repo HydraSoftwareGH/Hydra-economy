@@ -47,15 +47,18 @@ public class MarketCommand implements CommandExecutor {
 
     private void sendHelp(Player player) {
         player.sendMessage(Component.text("=== MERCADO ===").color(NamedTextColor.GOLD));
-        player.sendMessage(Component.text("/mercado sell <precio>").color(NamedTextColor.YELLOW));
-        player.sendMessage(Component.text("/mercado buy <id>").color(NamedTextColor.YELLOW));
-        player.sendMessage(Component.text("/mercado list").color(NamedTextColor.YELLOW));
-        player.sendMessage(Component.text("/mercado cancel <id>").color(NamedTextColor.YELLOW));
+        player.sendMessage(Component.text("/mercado sell <precio> - Vender item en mano").color(NamedTextColor.YELLOW));
+        player.sendMessage(Component.text("/mercado buy <id> - Comprar item por ID").color(NamedTextColor.YELLOW));
+        player.sendMessage(Component.text("/mercado list - Ver items en venta").color(NamedTextColor.YELLOW));
+        player.sendMessage(Component.text("/mercado cancel <id> - Cancelar publicacion").color(NamedTextColor.YELLOW));
+        player.sendMessage(Component.text("").color(NamedTextColor.WHITE));
+        player.sendMessage(Component.text("Documentacion completa: https://github.com/HydraSoftwareGH/Hydra-economy/blob/main/README.md").color(NamedTextColor.AQUA));
     }
 
     private void handleSell(Player player, String[] args) {
         if (args.length < 2) {
-            player.sendMessage(Component.text("Uso: /mercado sell <precio>").color(NamedTextColor.RED));
+            player.sendMessage(Component.text("Uso correcto: /mercado sell <precio>").color(NamedTextColor.RED));
+            player.sendMessage(Component.text("Usa /mercado help para ver la ayuda completa.").color(NamedTextColor.YELLOW));
             return;
         }
 

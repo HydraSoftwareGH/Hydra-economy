@@ -29,7 +29,11 @@ public class EconomyManager {
     public void load() {
         dataFile = new File(plugin.getDataFolder(), "balances.yml");
         if (!dataFile.exists()) {
-            plugin.saveResource("balances.yml", false);
+            try {
+                dataFile.createNewFile();
+            } catch (IOException e) {
+                plugin.getLogger().severe("No se pudo crear balances.yml: " + e.getMessage());
+            }
         }
         data = YamlConfiguration.loadConfiguration(dataFile);
         ConfigurationSection section = data.getConfigurationSection("balances");

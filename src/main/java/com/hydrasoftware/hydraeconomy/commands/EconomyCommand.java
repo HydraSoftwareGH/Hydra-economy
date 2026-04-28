@@ -3,6 +3,7 @@ package com.hydrasoftware.hydraeconomy.commands;
 import com.hydrasoftware.hydraeconomy.HydraEconomy;
 import com.hydrasoftware.hydraeconomy.economy.DailyRewardManager;
 import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.event.ClickEvent;
 import net.kyori.adventure.text.format.NamedTextColor;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
@@ -66,8 +67,8 @@ public class EconomyCommand implements CommandExecutor {
         sender.sendMessage(Component.text("=== HYDRAECONOMY - AYUDA ===").color(NamedTextColor.GOLD));
         sender.sendMessage(Component.text("/hydras [jugador] - Ver saldo de Hydras").color(NamedTextColor.YELLOW));
         sender.sendMessage(Component.text("/pay <jugador> <cantidad> - Pagar Hydras a otro jugador").color(NamedTextColor.YELLOW));
-        sender.sendMessage(Component.text("/daily - Reclamar recompensa diaria").color(NamedTextColor.YELLOW));
-        sender.sendMessage(Component.text("/mercado - Sistema de mercado").color(NamedTextColor.YELLOW));
+        sender.sendMessage(Component.text("/daily - Reclamar recompensa diaria (10 Hydras, +5 cada 5 dias)").color(NamedTextColor.YELLOW));
+        sender.sendMessage(Component.text("/mercado help - Sistema de mercado").color(NamedTextColor.YELLOW));
         if (sender.hasPermission("hydraeconomy.admin")) {
             sender.sendMessage(Component.text("").color(NamedTextColor.WHITE));
             sender.sendMessage(Component.text("=== ADMIN ===").color(NamedTextColor.RED));
@@ -76,6 +77,8 @@ public class EconomyCommand implements CommandExecutor {
             sender.sendMessage(Component.text("/hydrasadmin set <jugador> <cantidad> - Establecer saldo").color(NamedTextColor.RED));
             sender.sendMessage(Component.text("/hydrasadmin reload - Recargar configuracion").color(NamedTextColor.RED));
         }
+        sender.sendMessage(Component.text("").color(NamedTextColor.WHITE));
+        sender.sendMessage(Component.text("Documentacion completa: https://github.com/HydraSoftwareGH/Hydra-economy/blob/main/README.md").color(NamedTextColor.AQUA));
     }
 
     private boolean handlePay(CommandSender sender, String[] args) {
@@ -85,7 +88,8 @@ public class EconomyCommand implements CommandExecutor {
         }
 
         if (args.length < 2) {
-            sender.sendMessage(Component.text("Uso: /pay <jugador> <cantidad>").color(NamedTextColor.RED));
+            sender.sendMessage(Component.text("Uso correcto: /pay <jugador> <cantidad>").color(NamedTextColor.RED));
+            sender.sendMessage(Component.text("Usa /hydras help para ver la ayuda completa.").color(NamedTextColor.YELLOW));
             return true;
         }
 

@@ -32,7 +32,11 @@ public class DailyRewardManager {
     public void load() {
         dataFile = new File(plugin.getDataFolder(), "dailyrewards.yml");
         if (!dataFile.exists()) {
-            plugin.saveResource("dailyrewards.yml", false);
+            try {
+                dataFile.createNewFile();
+            } catch (IOException e) {
+                plugin.getLogger().severe("No se pudo crear dailyrewards.yml: " + e.getMessage());
+            }
         }
         data = YamlConfiguration.loadConfiguration(dataFile);
         for (String key : data.getKeys(false)) {

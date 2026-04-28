@@ -1,6 +1,7 @@
 package com.hydrasoftware.hydraeconomy.economy;
 
 import com.hydrasoftware.hydraeconomy.HydraEconomy;
+import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.inventory.ItemStack;
@@ -29,11 +30,17 @@ public class MarketManager {
     public void load() {
         dataFile = new File(plugin.getDataFolder(), "market.yml");
         if (!dataFile.exists()) {
-            plugin.saveResource("market.yml", false);
+            try {
+                dataFile.createNewFile();
+            } catch (IOException e) {
+                plugin.getLogger().severe("No se pudo crear market.yml: " + e.getMessage());
+            }
         }
         data = YamlConfiguration.loadConfiguration(dataFile);
         nextId = data.getInt("nextId", 1);
-        for (String key : data.getConfigurationSection("listings").getKeys(false)) {
+        ConfigurationSection listingsSection = data.getConfigurationSection("listings");
+        if (listingsSection != null) {
+            for (String key : listingsSection.getKeys(false)) {
             int id = Integer.parseInt(key);
             UUID seller = UUID.fromString(data.getString("listings." + key + ".seller"));
             BigDecimal price = BigDecimal.valueOf(data.getDouble("listings." + key + ".price"));
