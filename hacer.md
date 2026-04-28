@@ -6,6 +6,7 @@ Hydra economy
 - ~~Sistema de recompesa diaria, cada 5 dias se suma 5 hydras y el base es 10~~
 - ~~Comandos de coins de admin(añadir monedas, quitar monedas, etc)~~
 - ~~Mercado donde se puedan publicar cosas y comprar y que te den o te gastes tu dinero~~
+- ~~Sistema de ayuda (/hydras help, /mercado help, /hydrasadmin help)~~
 - Mas cosas pero que tienen q ver con la economia
 
 # Reglas
