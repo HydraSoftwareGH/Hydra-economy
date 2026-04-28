@@ -38,4 +38,5 @@ El JAR estará en `build/libs/`.
 
 ## Dependencias
 - PaperMC 1.21.11 (API 26.1.2)
-- Java 25
+- Java 25 (para compilar, bytecode Java 21)
+- Java 21 (para ejecutar en el servidor)

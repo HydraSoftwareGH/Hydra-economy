@@ -18,6 +18,10 @@ java {
     toolchain.languageVersion.set(JavaLanguageVersion.of(25))
 }
 
+tasks.withType<JavaCompile> {
+    options.release.set(21)
+}
+
 tasks {
     processResources {
         filesMatching("plugin.yml") {

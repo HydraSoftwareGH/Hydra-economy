@@ -45,4 +45,4 @@ El JAR se genera en `build/libs/`.
 ## Dependencias
 
 - PaperMC 1.21.11 (API 26.1.2)
-- Java 25
+- Java 21 (servidor) / Java 25 (compilación)
