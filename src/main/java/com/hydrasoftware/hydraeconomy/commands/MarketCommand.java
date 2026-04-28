@@ -35,6 +35,7 @@ public class MarketCommand implements CommandExecutor {
         }
 
         switch (args[0].toLowerCase()) {
+            case "help", "ayuda" -> sendHelp(player);
             case "sell", "vender" -> handleSell(player, args);
             case "buy", "comprar" -> handleBuy(player, args);
             case "list", "lista" -> handleList(player);

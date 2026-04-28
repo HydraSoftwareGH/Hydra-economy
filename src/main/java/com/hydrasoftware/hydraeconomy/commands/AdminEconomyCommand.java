@@ -27,8 +27,8 @@ public class AdminEconomyCommand implements CommandExecutor {
             return true;
         }
 
-        if (args.length < 2) {
-            sender.sendMessage(Component.text("Uso: /hydrasadmin <give|remove|set|reload> <jugador> [cantidad]").color(NamedTextColor.RED));
+        if (args.length < 1 || args[0].equalsIgnoreCase("help")) {
+            sendHelp(sender);
             return true;
         }
 
@@ -103,8 +103,16 @@ public class AdminEconomyCommand implements CommandExecutor {
                 plugin.getDailyRewardManager().load();
                 sender.sendMessage(Component.text("Configuracion recargada.").color(NamedTextColor.GREEN));
             }
-            default -> sender.sendMessage(Component.text("Uso: /hydrasadmin <give|remove|set|reload> <jugador> [cantidad]").color(NamedTextColor.RED));
+            default -> sendHelp(sender);
         }
         return true;
+    }
+
+    private void sendHelp(CommandSender sender) {
+        sender.sendMessage(Component.text("=== HYDRAECONOMY ADMIN ===").color(NamedTextColor.RED));
+        sender.sendMessage(Component.text("/hydrasadmin give <jugador> <cantidad> - Dar Hydras").color(NamedTextColor.RED));
+        sender.sendMessage(Component.text("/hydrasadmin remove <jugador> <cantidad> - Quitar Hydras").color(NamedTextColor.RED));
+        sender.sendMessage(Component.text("/hydrasadmin set <jugador> <cantidad> - Establecer saldo").color(NamedTextColor.RED));
+        sender.sendMessage(Component.text("/hydrasadmin reload - Recargar configuracion").color(NamedTextColor.RED));
     }
 }

@@ -36,6 +36,11 @@ public class EconomyCommand implements CommandExecutor {
     }
 
     private boolean handleBalance(CommandSender sender, String[] args) {
+        if (args.length == 1 && args[0].equalsIgnoreCase("help")) {
+            sendHelp(sender);
+            return true;
+        }
+
         if (args.length == 1 && sender.hasPermission("hydraeconomy.admin")) {
             Player target = Bukkit.getPlayer(args[0]);
             if (target == null) {
@@ -55,6 +60,22 @@ public class EconomyCommand implements CommandExecutor {
         BigDecimal balance = plugin.getEconomyManager().getBalance(player.getUniqueId());
         sender.sendMessage(Component.text("Tienes " + balance + " Hydras.").color(NamedTextColor.GOLD));
         return true;
+    }
+
+    private void sendHelp(CommandSender sender) {
+        sender.sendMessage(Component.text("=== HYDRAECONOMY - AYUDA ===").color(NamedTextColor.GOLD));
+        sender.sendMessage(Component.text("/hydras [jugador] - Ver saldo de Hydras").color(NamedTextColor.YELLOW));
+        sender.sendMessage(Component.text("/pay <jugador> <cantidad> - Pagar Hydras a otro jugador").color(NamedTextColor.YELLOW));
+        sender.sendMessage(Component.text("/daily - Reclamar recompensa diaria").color(NamedTextColor.YELLOW));
+        sender.sendMessage(Component.text("/mercado - Sistema de mercado").color(NamedTextColor.YELLOW));
+        if (sender.hasPermission("hydraeconomy.admin")) {
+            sender.sendMessage(Component.text("").color(NamedTextColor.WHITE));
+            sender.sendMessage(Component.text("=== ADMIN ===").color(NamedTextColor.RED));
+            sender.sendMessage(Component.text("/hydrasadmin give <jugador> <cantidad> - Dar Hydras").color(NamedTextColor.RED));
+            sender.sendMessage(Component.text("/hydrasadmin remove <jugador> <cantidad> - Quitar Hydras").color(NamedTextColor.RED));
+            sender.sendMessage(Component.text("/hydrasadmin set <jugador> <cantidad> - Establecer saldo").color(NamedTextColor.RED));
+            sender.sendMessage(Component.text("/hydrasadmin reload - Recargar configuracion").color(NamedTextColor.RED));
+        }
     }
 
     private boolean handlePay(CommandSender sender, String[] args) {
