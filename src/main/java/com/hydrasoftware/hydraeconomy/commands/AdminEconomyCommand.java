@@ -2,6 +2,7 @@ package com.hydrasoftware.hydraeconomy.commands;
 
 import com.hydrasoftware.hydraeconomy.HydraEconomy;
 import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.event.ClickEvent;
 import net.kyori.adventure.text.format.NamedTextColor;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
@@ -122,6 +123,9 @@ public class AdminEconomyCommand implements CommandExecutor {
         sender.sendMessage(Component.text("/hydrasadmin set <jugador> <cantidad> - Establecer saldo").color(NamedTextColor.RED));
         sender.sendMessage(Component.text("/hydrasadmin reload - Recargar configuracion").color(NamedTextColor.RED));
         sender.sendMessage(Component.text("").color(NamedTextColor.WHITE));
-        sender.sendMessage(Component.text("Documentacion completa: https://github.com/HydraSoftwareGH/Hydra-economy/blob/main/README.md").color(NamedTextColor.AQUA));
+        sender.sendMessage(Component.text("Documentacion completa: https://github.com/HydraSoftwareGH/Hydra-economy")
+                .color(NamedTextColor.AQUA)
+                .clickEvent(ClickEvent.openUrl("https://github.com/HydraSoftwareGH/Hydra-economy/blob/main/README.md"))
+                .hoverEvent(Component.text("Click para abrir la documentacion").color(NamedTextColor.GRAY)));
     }
 }
