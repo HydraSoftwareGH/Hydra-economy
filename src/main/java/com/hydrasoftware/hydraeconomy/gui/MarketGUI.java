@@ -18,7 +18,7 @@ import java.util.*;
 
 public class MarketGUI implements Listener {
 
-    private static final int PAGE_SIZE = 54;
+    private static final int PAGE_SIZE = 27;
     private static final Map<UUID, Integer> playerPages = new HashMap<>();
 
     public static void open(Player player, HydraEconomy plugin) {
@@ -37,7 +37,7 @@ public class MarketGUI implements Listener {
         if (page >= totalPages) page = totalPages - 1;
         if (page < 0) page = 0;
 
-        Inventory inv = Bukkit.createInventory(null, 54,
+        Inventory inv = Bukkit.createInventory(null, 27,
                 Component.text("Mercado - Pagina " + (page + 1) + "/" + totalPages));
 
         int start = page * PAGE_SIZE;
@@ -65,7 +65,7 @@ public class MarketGUI implements Listener {
             ItemMeta prevMeta = prev.getItemMeta();
             prevMeta.displayName(Component.text("Pagina anterior").color(NamedTextColor.YELLOW));
             prev.setItemMeta(prevMeta);
-            inv.setItem(45, prev);
+            inv.setItem(18, prev);
         }
 
         if (page + 1 < totalPages) {
@@ -73,14 +73,14 @@ public class MarketGUI implements Listener {
             ItemMeta nextMeta = next.getItemMeta();
             nextMeta.displayName(Component.text("Pagina siguiente").color(NamedTextColor.YELLOW));
             next.setItemMeta(nextMeta);
-            inv.setItem(53, next);
+            inv.setItem(26, next);
         }
 
         ItemStack close = new ItemStack(Material.BARRIER);
         ItemMeta closeMeta = close.getItemMeta();
         closeMeta.displayName(Component.text("Cerrar").color(NamedTextColor.RED));
         close.setItemMeta(closeMeta);
-        inv.setItem(49, close);
+        inv.setItem(22, close);
 
         playerPages.put(player.getUniqueId(), page);
         player.openInventory(inv);
