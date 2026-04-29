@@ -1,0 +1,4 @@
+# HydraEconomy - Configuracion
+# Discord bot token (opcional). Deja vacio para deshabilitar el bot.
+# Necesitas el jar de JDA 5.3.0+ en la carpeta libs/ del servidor.
+discord-token: ''

@@ -3,6 +3,10 @@
 ## Descripción
 Plugin de economía para PaperMC 1.21.11 con moneda llamada "Hydras".
 
+### Discord Bot (opcional)
+- Slash commands: `/hydras`, `/mercado`, `/daily`, `/top`
+- Requiere JDA 5.3.0+ en `libs/` del servidor y token en `config.yml`
+
 ## Características
 
 ### Sistema de Economía

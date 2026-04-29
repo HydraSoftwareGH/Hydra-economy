@@ -34,7 +34,8 @@ Plugin de economía para PaperMC 1.21.11 con moneda llamada "Hydras".
 
 - **Economía**: Moneda Hydras, transferencias entre jugadores, consulta de saldos
 - **Recompensa diaria**: Base 10 Hydras, +5 de bonus cada 5 días consecutivos
-- **Mercado**: Publicar y comprar items entre jugadores usando Hydras
+- **Mercado**: Publicar y comprar items entre jugadores usando Hydras (GUI de cofre virtual)
+- **Discord Bot**: Slash commands para consultar saldos, mercado y top desde Discord
 - **Permisos**: Comandos de administrador protegidos por `hydraeconomy.admin`
 - **Almacenamiento**: Datos guardados en YAML (`balances.yml`, `dailyrewards.yml`, `market.yml`)
 
