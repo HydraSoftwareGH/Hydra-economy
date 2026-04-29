@@ -1,7 +1,7 @@
 # HydraEconomy - Plugin de PaperMC
 
 ## Descripción
-Plugin de economía para PaperMC 1.21.11 con moneda llamada "Hydras".
+Plugin de economía para PaperMC 1.21.5+ con moneda llamada "Hydras".
 
 ### Discord Bot (opcional)
 - Slash commands: `/hydras`, `/mercado`, `/daily`, `/top`
@@ -43,9 +43,9 @@ El JAR estará en `build/libs/`.
 ## Compilación (GitHub Actions)
 - JDK 25 vía actions/setup-java
 - Bytecode Java 21 (`-source 21 -target 21`)
-- paper-api 26.1.2.build.+
+- paper-api 26.2.0.build.+
 
 ## Dependencias
-- PaperMC 1.21.11 (API 26.1.2)
+- PaperMC 1.21.5+ (API 26.2.0)
 - Java 25 (para compilar)
 - Java 21 (para ejecutar en el servidor, bytecode compatible)

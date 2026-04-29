@@ -175,7 +175,7 @@ repositories {
 }
 
 dependencies {
-    compileOnly("io.papermc.paper:paper-api:26.1.2.build.+")
+    compileOnly("io.papermc.paper:paper-api:26.2.0.build.+")
     compileOnly(files("ruta/a/HydraEconomy.jar")) // o ponerlo en libs/
 }
 ```
