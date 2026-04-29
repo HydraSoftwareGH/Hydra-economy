@@ -2,6 +2,7 @@ package com.hydrasoftware.hydraeconomy.commands;
 
 import com.hydrasoftware.hydraeconomy.HydraEconomy;
 import com.hydrasoftware.hydraeconomy.economy.MarketManager;
+import com.hydrasoftware.hydraeconomy.gui.MarketGUI;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.event.ClickEvent;
 import net.kyori.adventure.text.format.NamedTextColor;
@@ -13,7 +14,6 @@ import org.bukkit.inventory.ItemStack;
 import org.jetbrains.annotations.NotNull;
 
 import java.math.BigDecimal;
-import java.util.List;
 
 public class MarketCommand implements CommandExecutor {
 
@@ -30,8 +30,8 @@ public class MarketCommand implements CommandExecutor {
             return true;
         }
 
-        if (args.length < 1) {
-            sendHelp(player);
+        if (args.length < 1 || args[0].equalsIgnoreCase("list") || args[0].equalsIgnoreCase("lista")) {
+            MarketGUI.open(player, plugin);
             return true;
         }
 
@@ -39,7 +39,6 @@ public class MarketCommand implements CommandExecutor {
             case "help", "ayuda" -> sendHelp(player);
             case "sell", "vender" -> handleSell(player, args);
             case "buy", "comprar" -> handleBuy(player, args);
-            case "list", "lista" -> handleList(player);
             case "cancel", "cancelar" -> handleCancel(player, args);
             default -> sendHelp(player);
         }
@@ -113,20 +112,6 @@ public class MarketCommand implements CommandExecutor {
             }
         } catch (NumberFormatException e) {
             player.sendMessage(Component.text("ID invalido.").color(NamedTextColor.RED));
-        }
-    }
-
-    private void handleList(Player player) {
-        List<MarketManager.MarketListing> listings = plugin.getMarketManager().getListings();
-        if (listings.isEmpty()) {
-            player.sendMessage(Component.text("No hay nada publicado en el mercado.").color(NamedTextColor.YELLOW));
-            return;
-        }
-
-        player.sendMessage(Component.text("=== LISTA DEL MERCADO ===").color(NamedTextColor.GOLD));
-        for (MarketManager.MarketListing listing : listings) {
-            player.sendMessage(Component.text("ID " + listing.id + " | " + listing.item.getType().name()
-                    + " x" + listing.item.getAmount() + " | " + listing.price + " Hydras").color(NamedTextColor.YELLOW));
         }
     }
 

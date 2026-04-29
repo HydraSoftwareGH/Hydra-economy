@@ -6,6 +6,7 @@ import com.hydrasoftware.hydraeconomy.commands.MarketCommand;
 import com.hydrasoftware.hydraeconomy.economy.DailyRewardManager;
 import com.hydrasoftware.hydraeconomy.economy.EconomyManager;
 import com.hydrasoftware.hydraeconomy.economy.MarketManager;
+import com.hydrasoftware.hydraeconomy.gui.MarketGUI;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class HydraEconomy extends JavaPlugin {
@@ -27,6 +28,8 @@ public class HydraEconomy extends JavaPlugin {
         getCommand("daily").setExecutor(new EconomyCommand(this));
         getCommand("hydrasadmin").setExecutor(new AdminEconomyCommand(this));
         getCommand("mercado").setExecutor(new MarketCommand(this));
+
+        getServer().getPluginManager().registerEvents(new MarketGUI(), this);
 
         getLogger().info("HydraEconomy ha sido activado!");
     }
