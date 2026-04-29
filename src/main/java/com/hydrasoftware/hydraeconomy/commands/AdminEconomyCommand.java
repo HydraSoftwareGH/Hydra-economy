@@ -32,6 +32,20 @@ public class AdminEconomyCommand implements CommandExecutor {
             return true;
         }
 
+        if (args[0].equalsIgnoreCase("reload")) {
+            plugin.reloadConfig();
+            plugin.getEconomyManager().load();
+            plugin.getMarketManager().load();
+            plugin.getDailyRewardManager().load();
+            sender.sendMessage(Component.text("Configuracion recargada.").color(NamedTextColor.GREEN));
+            return true;
+        }
+
+        if (args.length < 2) {
+            sender.sendMessage(Component.text("Uso: /hydrasadmin <give|remove|set> <jugador> <cantidad>").color(NamedTextColor.RED));
+            return true;
+        }
+
         Player target = Bukkit.getPlayer(args[1]);
         if (target == null) {
             sender.sendMessage(Component.text("Jugador no encontrado.").color(NamedTextColor.RED));
@@ -95,13 +109,6 @@ public class AdminEconomyCommand implements CommandExecutor {
                 } catch (NumberFormatException e) {
                     sender.sendMessage(Component.text("Cantidad invalida.").color(NamedTextColor.RED));
                 }
-            }
-            case "reload" -> {
-                plugin.reloadConfig();
-                plugin.getEconomyManager().load();
-                plugin.getMarketManager().load();
-                plugin.getDailyRewardManager().load();
-                sender.sendMessage(Component.text("Configuracion recargada.").color(NamedTextColor.GREEN));
             }
             default -> sendHelp(sender);
         }

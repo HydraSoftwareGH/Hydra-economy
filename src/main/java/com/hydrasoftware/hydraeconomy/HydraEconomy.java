@@ -17,7 +17,6 @@ public class HydraEconomy extends JavaPlugin {
     @Override
     public void onEnable() {
         getDataFolder().mkdirs();
-        saveDefaultConfig();
 
         economyManager = new EconomyManager(this);
         dailyRewardManager = new DailyRewardManager(this);
